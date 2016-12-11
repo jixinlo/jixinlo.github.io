@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[前端]]></title>
+      <url>%2F2016%2F12%2F11%2F%E5%89%8D%E7%AB%AF%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[node入门]]></title>
+      <url>%2F2016%2F12%2F11%2Fnode%E5%85%A5%E9%97%A8%2F</url>
+      <content type="text"><![CDATA[Node服务器端开发第一天 Node简介及配置、快速上手、核心特点、模块化 一、Node简介1、客户端的JavaScript是怎样的 什么是 JavaScript？ 脚本语言 运行在浏览器中 一般用来做客户端页面的交互（Interactive） JavaScript 的运行环境？ 是不是运行在浏览器呢？ 不够严谨 运行在浏览器内核中的 JS 引擎（engine） 浏览器中的 JavaScript 可以做什么？ 操作DOM（对DOM的增删改、注册事件） AJAX/跨域 BOM（页面跳转、历史记录、console.log()、alert()） ECMAScript 浏览器中的 JavaScript 不可以做什么？ 文件操作（文件和文件夹的CRUD） 没有办法操作系统信息 由于运行环境特殊（我们写的代码是在不认识的人的浏览器中运行） 在开发人员能力相同的情况下编程语言的能力取决于什么？ （取决于平台） -语言本身？ 语言本身只是提供定义变量，定义函数，定义类型，流程控制，循环结构之类的操作 应该取决于运行该语言的平台（环境提供的接口） 比如对于JS来说， 我们常说的JS实际是ES，大部分能力都是由浏览器的执行引擎决定 BOM和DOM可以说是浏览器开放出来的接口 比如：Cordova中提供JS调用摄像头，操作本地文件的API Java和PHP既是语言也是平台 Java运行在Java虚拟机（跨操作系统） PHP既是语言也是平台（跨操作系统） C#语言平台：.NET Framework（Windows） C#可以运行在MONO这样的平台 因为有人需要将C#运行在Linux平台，所有出现了MONO JavaScript 只可以运行在浏览器中吗？ 不是 一般情况下一种语言运行在一种平台上 能运行在哪取决于，这个环境有没有特定平台 2、什么是Node Node 就是 JavaScript 语言在服务器端的运行环境 所谓“运行环境（平台）”有两层意思： 首先，JavaScript 语言通过 Node 在服务器运行，在这个意义上，Node 有点像 JavaScript 虚拟机； 其次，Node 提供大量工具库，使得 JavaScript 语言与操作系统互动（比如读写文件、新建子进程），在这个意义上， Node 又是 JavaScript 的工具库。 组成部分 V8： 解析ECMA libuv： 各种工具+（知识点：Java/虚拟机平台 C#/.net平台 js/node平台） Node的实现结构 v8解析传入的js文件，调用libuv库，进而操作系统 为什么是JavaScript js的用的人最多 注意：是node选择了js，而不是js发展成了node Node在当下Web开发领域的应用 做网站：处理请求和返回相应 -&gt;整体开发 node分发：根据请求调用后台接口，然后渲染HTML -&gt;中间层 （天猫） 3、重点理解 Node是一个JavaScript的运行环境（平台），不是一门语言，也不是JavaScript的框架； Node的实现结构； Node可以用来开发服务端应用程序，Web系统； 基于Node的前端工具集 二、环境配置1、安装包的方式安装 安装包下载链接： Mac OSX： darwin Windows： x64 x86 安装操作： 一路Next 更新版本 操作方式： 重新下载最新的安装包； 覆盖安装即可； 问题： 以前版本安装的很多全局的工具包需要重新安装 无法回滚到之前的版本 无法在多个版本之间切换（很多时候我们要使用特定版本） 2、NVM工具的使用 Node Version Manager（Node版本管理工具） 由于以后的开发工作可能会在多个Node版本中测试，而且Node的版本也比较多，所以需要这么款工具来管理 安装操作步骤 下载：nvm-windows 解压到一个全英文路径 编辑解压目录下的settings.txt文件（不存在则新建） root 配置为当前 nvm.exe 所在目录 path 配置为 node 快捷方式所在的目录 arch 配置为当前操作系统的位数（32/64） proxy 不用配置 配置环境变量 可以通过 window+r : sysdm.cpl NVM_HOME = 当前 nvm.exe 所在目录 NVM_SYMLINK = node 快捷方式所在的目录 PATH += %NVM_HOME%;%NVM_SYMLINK%; 打开CMD通过set [name]命令查看环境变量是否配置成功 PowerShell中是通过dir env:[name]命令 NVM使用说明： https://github.com/coreybutler/nvm-windows/ NPM的目录之后使用再配置 环境变量的概念 环境变量就是操作系统提供的系统级别用于存储变量的地方 打开：在运行中输入sysdm.cpl打开系统属性（或我的电脑右击） 定义：运行程序而没有告诉完整路径时 本目录&gt;系统变量（故添加环境变量可以在任何目录打开） 安装方式 A：直接在path变量值中加入地址 B：现在外部定义变量，然后在path值中使用%%引用变量值 注意 环境变量的变量名是不区分大小写的 PATH 变量：只要添加到 PATH 变量中的路径，都可以在任何目录下搜索 Windows下常用的命令行操作- cd(change directory): 切换目录 - md(made directory): 创建目录 - rd(remove directory): 删除目录 - del 删除指定文件 - dir: 列出目录内容 - cls(clear screen): 清屏 快速上手 事件驱动和非阻塞 模块化开发]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[markdown入门]]></title>
+      <url>%2F2016%2F12%2F11%2Fmarkdown%E5%85%A5%E9%97%A8%2F</url>
+      <content type="text"><![CDATA[markdown入门一、简介Markdown 的目标是实现「易读易写」成为一种适用于网络的书写语言 Markdown 不是想要取代 HTML，HTML 是一种发布的格式，Markdown 是一种书写的格式 二、版本Markdown还有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），在语法上基本兼容，但在细节上也有改动。 基于工具，如Pandoc。 基于网站，如GitHub和Wikipedia。 本文的版本基于github 三、语法1. 标题：# （1到6个；#前面不能有空格） ##标题 ###标题 2. 换行：补两个空格或空一行 （回车无效） 一行 二行 3. 横线：—或* *4. 文本修饰 斜体：左右一星; 粗体：左右二星; 粗粗体：左右三星; 删除线：两个波浪线; 斜体粗体粗体波浪线 5. 文本引用：&gt; 文本引用 6. 代码引用：`` （注意：上下对齐，不然影响后面。tab键也可以；反引号,英文状态下的tab上面的键） 单行代码 12双行代码 双行代码 7. 列表：1、- 、* liebiao liebiao -[x] liebiao-[ ] liebiao 8. 表格：表头用中横线，|线分割单元格，冒号表示对齐。（全部是英文符号） 班级 姓名 一 小白 二 小尧 9. 链接: [](url) ; 图片：![](url) baidu]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[python入门]]></title>
+      <url>%2F2016%2F12%2F11%2Fpython%E5%85%A5%E9%97%A8%2F</url>
+      <content type="text"><![CDATA[#快速入门 ##一.安装python环境 官网下载，安装；添加环境变量 使用sublime text3，保存为py,使用ctrl+B运行。 ###二.python的两种实现方式： 语句 使用关键词组成命令，告诉python做什么 例子：print &#39;hello print abs(-1) 与%(字符串格式操作符)结合：替换字符与&gt;&gt;(重定向)结合：重定向 表达式（函数和算术表达式） 使用括号调用的函数；使用数学操作符构成的算术表达式 例子：print abs(-1) 知识点：书写格式顶头开始写python代码，不然报错 ###三.知识点 ####1、输入和输出 标准输出：print语句 标准输入：raw_input()内建函数 ####2、注释 单行注释：# 多行注释：三引号 中文注释：在文件头上写入：#coding=gbk或：#coding=utf-8如果开头不声明保存编码格式，会默认使用ASCII码保存，那么代码中有中文就会有问题，即使你的中文是在注释里面。 ####3、操作符 算术操作符 加减乘除和取余：+ - * / % 传统除法和真正除法：/表示整型，//表示浮点 乘方：**优先级：多的优先 比较操作符 大小等：&gt; &lt; &gt;= &lt;= == != 根据值的真假返回布尔值 逻辑运算符 和或不：and or not 将表达式连接在一起，返回布尔值 ####4、变量 字母开头的标识符 ####5、数字类型 ####6、字符串引号之间的字符集合 获取子字符串：[](索引操作符)、[:](切片操作符) 字符串连接运算：+ 字符串重复运算：* ####7、列表和元组 列表：使用中括号[],可以修改 元组：使用小括号(),不可以修改 ####8、字典映射数据类型，有键值对构成，大括号表示｛｝ ####9、if语句，while循环，for循环 ####10、列表解析 ####11、文件 ####12、错误与异常]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2016%2F12%2F10%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
