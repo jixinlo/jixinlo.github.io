@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/15/window%E4%B8%8B%E5%A4%9A%E4%B8%AApython%E7%89%88%E6%9C%AC%E5%85%B1%E5%AD%98/</loc>
+    
+    <lastmod>2016-12-18T01:44:37.171Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/14/python%E5%AD%A6%E4%B9%A0%E4%B9%A6%E7%B1%8D/</loc>
+    
+    <lastmod>2016-12-14T03:19:19.910Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/12/11/markdown%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2016-12-12T02:10:17.084Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2016-12-11T12:29:57.780Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/10/hello-world/</loc>
-    
-    <lastmod>2016-12-11T06:44:57.988Z</lastmod>
     
   </url>
   

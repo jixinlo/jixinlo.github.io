@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[window下多个python版本共存]]></title>
+      <url>%2F2016%2F12%2F15%2Fwindow%E4%B8%8B%E5%A4%9A%E4%B8%AApython%E7%89%88%E6%9C%AC%E5%85%B1%E5%AD%98%2F</url>
+      <content type="text"><![CDATA[一、源程序安装1、安装你需要的两个不同版本的python 这里我安装的是2.7和3.4的版本，自己的笔记本(win7系统)安装3.5版本总是失败。 尽量文件夹为C盘下的python27和python34 2、增加环境变量 c:\Python27 c:\Python27\Scripts c:\Python34 c:\Python34\Scripts 3、修改启动文件名， 因为我选择Python3作为我的主要开发环境。所以，我修改Python27安装目录下的python.exe和pythonw.exe分别为python3.exe和pythonw3.exe。这样使用命令python我们使用的是3版本的Python，而使用Python2则使用的是2.7版本的Python 4、pip问题 使用pip进行软件包安装的时候，对于Python3仍然使用pip install XXX，而对于Python2则需要使用python2 -m pip install XXX的形式进行安装。 二、sublime text下共存两个python版本1、可以新建一个 Build System 点击 Tools -&gt; Build System -&gt; New Build System…，会弹出一个编辑界面，在这个界面里面可以写出你的自定义构建系统。 修改代码 123456789101112131415 &#123; &quot;shell_cmd&quot;: &quot;python2 -u \&quot;$file\&quot;&quot;, &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;, &quot;selector&quot;: &quot;source.python&quot;, &quot;env&quot;: &#123;&quot;PYTHONIOENCODING&quot;: &quot;utf-8&quot;&#125;, &quot;variants&quot;: [ &#123; &quot;name&quot;: &quot;Syntax Check&quot;, &quot;shell_cmd&quot;: &quot;python -m py_compile \&quot;$&#123;file&#125;\&quot;&quot;, &#125; ]&#125; 保存为python2 2、在你的代码处把构建系统改为你自己写的（点击 Tools -&gt; Build System -&gt; **），之后就能通过快捷键 Ctrl+B 来使用你自定义的解释器。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[python学习书籍]]></title>
+      <url>%2F2016%2F12%2F14%2Fpython%E5%AD%A6%E4%B9%A0%E4%B9%A6%E7%B1%8D%2F</url>
+      <content type="text"><![CDATA[《Python简明教程》让人快速的对 Python 知识有个全局概览，关键字、循环分支、异常、基本数据结构都提到了，学习一门新语言，掌握这些知识已经完全可以写基本程序了。 《 Dive Into Python》正则表达式那一章节，正是我工作需要的，对我当时帮助很多。 #《Python学习笔记》在我了解 Python 之后去看它，可能提到了一些我初学时疏忽的知识点，所以让我对它非常有好感。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[前端]]></title>
       <url>%2F2016%2F12%2F11%2F%E5%89%8D%E7%AB%AF%2F</url>
       <content type="text"></content>
@@ -27,13 +41,6 @@
       <title><![CDATA[python入门]]></title>
       <url>%2F2016%2F12%2F11%2Fpython%E5%85%A5%E9%97%A8%2F</url>
       <content type="text"><![CDATA[快速入门一.安装python环境 官网下载，安装；添加环境变量 使用sublime text3，保存为py,使用ctrl+B运行。 二.python的两种实现方式： 语句 使用关键词组成命令，告诉python做什么 例子：print &#39;hello print abs(-1) 与%(字符串格式操作符)结合：替换字符与&gt;&gt;(重定向)结合：重定向 表达式（函数和算术表达式） 使用括号调用的函数；使用数学操作符构成的算术表达式 例子：print abs(-1) 知识点：书写格式顶头开始写python代码，不然报错 三.知识点1、输入和输出 标准输出：print语句 标准输入：raw_input()内建函数 2、注释 单行注释：# 多行注释：三引号 中文注释：在文件头上写入：#coding=gbk或：#coding=utf-8如果开头不声明保存编码格式，会默认使用ASCII码保存，那么代码中有中文就会有问题，即使你的中文是在注释里面。 3、操作符 算术操作符 加减乘除和取余：+ - * / % 传统除法和真正除法：/表示整型，//表示浮点 乘方：**优先级：多的优先 比较操作符 大小等：&gt; &lt; &gt;= &lt;= == != 根据值的真假返回布尔值 逻辑运算符 和或不：and or not 将表达式连接在一起，返回布尔值 4、变量 字母开头的标识符 5、数字类型6、字符串引号之间的字符集合 获取子字符串：[](索引操作符)、[:](切片操作符) 字符串连接运算：+ 字符串重复运算：* 7、列表和元组 列表：使用中括号[],可以修改 元组：使用小括号(),不可以修改 8、字典映射数据类型，有键值对构成，大括号表示｛｝ 9、if语句，while循环，for循环10、列表解析11、文件12、错误与 异常]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2016%2F12%2F10%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
     </entry>
 
     
